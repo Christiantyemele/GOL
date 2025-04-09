@@ -50,7 +50,7 @@ impl Universe {
         }
         count
     }
-    
+
     pub fn tick(&mut self) {
         let mut next = self.cells.clone();
 
@@ -97,8 +97,21 @@ impl Universe {
             cells,
         }
     }
+
     pub fn render(&self) -> String {
         self.to_string()
+    }
+
+    pub fn width(&self) -> u32 {
+        self.width
+    }
+
+    pub fn height(&self) -> u32 {
+        self.height
+    }
+    
+    pub fn cells(&self) -> *const Cell {
+        self.cells.as_ptr()
     }
 }
 
